@@ -1,0 +1,35 @@
+{
+  "manifest_version": 3,
+  "name": "Adaptive Colorblind Engine",
+  "version": "1.0.0",
+  "description": "Real-time adaptive colorblind correction based on user-selected confused colors.",
+
+  "action": {
+    "default_title": "Adaptive Colorblind Engine",
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "CBicon16.png",
+      "48": "CBicon48.png",
+      "128": "CBicon128.png"
+    }
+  },
+
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting",
+    "tabs"
+  ],
+
+  "host_permissions": [
+    "<all_urls>"
+  ],
+
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_start"
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Adaptive Colorblind Engine</title>
+    <link rel="stylesheet" href="popup.css" />
+</head>
+
+<body>
+    <h1>Adaptive<br>Colorblind Engine</h1>
+
+    <div class="card">
+
+        <!-- USER INPUT COLORS -->
+        <label for="colorA">Color A (you confuse)</label>
+        <input type="color" id="colorA" class="color-box" value="#ff0000"/>
+
+        <label for="colorB">Color B (you confuse it with)</label>
+        <input type="color" id="colorB" class="color-box" value="#00ff00"/>
+
+        <div class="divider"></div>
+
+        <!-- STRENGTH BAR -->
+        <label for="strength">Correction Strength</label>
+        <input type="range" id="strength" min="0" max="100" value="60" />
+        <div class="strength-value">Strength: <span id="strengthLabel">60%</span></div>
+
+        <div class="divider"></div>
+
+        <!-- PRESETS -->
+        <label for="presetSelect">Presets</label>
+        <select id="presetSelect" name="presetSelect">        
+            <option value="adaptive">Adaptive (Custom)</option>
+            <option value="protanopia">Protanopia</option>
+            <option value="deuteranopia">Deuteranopia</option>
+            <option value="tritanopia">Tritanopia</option>
+            <option value="none">None</option>
+        </select>
+
+        <div class="divider"></div>
+
+        <!-- CONTROLS -->
+        <div class="button-row">
+            <button id="applyBtn" class="glow-anim">Apply</button>
+            <button id="resetBtn" class="reset">Reset</button>
+        </div>
+
+        <!-- Reload Toggle -->
+        <div class="reload-toggle">
+            <label>
+                <input type="checkbox" id="reloadToggle">
+                Reload page after applying
+            </label>
+        </div>
+
+    </div>
+
+    <footer>
+        <small>Powered by Top Table Vision Engine</small>
+    </footer>
+
+    <script src="popup.js"></script>
+</body>
+</html>
