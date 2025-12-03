@@ -1,299 +1,105 @@
-/* ============================================================
-   GLOBAL — CYBER GLASS SYSTEM
-   ============================================================ */
-
-   :root {
-    --bg: #0d1117;
-    --panel: rgba(255, 255, 255, 0.07);
-    --panel-hover: rgba(255, 255, 255, 0.10);
-    --glass-border: rgba(255, 255, 255, 0.18);
-
-    --text: #e2e8f0;
-    --text-soft: #9fb4c6;
-
-    --accent: #33aaff;
-    --accent-bright: #66c7ff;
-
-    --danger: #ff4d6d;
-
-    --radius: 14px;
-    --transition: 0.25s ease;
-
-    --glow: 0 0 12px rgba(50, 150, 255, 0.7),
-            0 0 24px rgba(50, 150, 255, 0.4),
-            0 0 38px rgba(50, 150, 255, 0.25);
-
-    --panel-shadow: 0 4px 22px rgba(0, 0, 0, 0.45);
-}
-select {
-  width: 100%;
-  padding: 12px;
-  border-radius: var(--radius);
-  border: 1px solid rgba(255,255,255,0.22);
-  background: rgba(255,255,255,0.08);
-  color: var(--text);
-  font-size: 14px;
-  margin-bottom: 16px;
-  cursor: pointer;
-  transition: var(--transition);
-}
-
-select:hover {
-  border-color: var(--accent);
-  box-shadow: var(--glow);
-}
-
-option {
-  background: #0d1117;
-  color: var(--text);
+/* ------------ RESET ------------ */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
 }
 
 body {
-    width: 320px;
-    margin: 0;
-    padding: 20px;
-    background: var(--bg);
-    font-family: 'Inter', system-ui, sans-serif;
-    color: var(--text);
-    animation: fadeIntro 0.45s ease;
+    width: 300px;
+    padding: 16px;
+    background: #121212;
+    color: #e5e5e5;
 }
 
-@keyframes fadeIntro {
-    from { opacity: 0; transform: translateY(6px); }
-    to   { opacity: 1; transform: translateY(0); }
-}
-
-/* ============================================================
-   HEADER — HOLOGRAPHIC TITLE
-   ============================================================ */
-
+/* ------------ TITLE ------------ */
 h1 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 12px;
     text-align: center;
-    margin: 0 0 20px 0;
-    font-size: 22px;
-    line-height: 1.2;
-    font-weight: 800;
-    letter-spacing: 1px;
-
-    background: linear-gradient(90deg, #35c5ff, #7aa0ff, #35c5ff);
-    -webkit-background-clip: text;
-    color: transparent;
-
-    animation: holoShift 9s infinite linear;
+    color: #ffffff;
 }
 
-@keyframes holoShift {
-    0% { background-position: 0%; }
-    100% { background-position: 200%; }
-}
-
-/* ============================================================
-   CARD PANEL — GLASSMORPHIC CONTAINER
-   ============================================================ */
-
-.card {
-    background: var(--panel);
-    border-radius: var(--radius);
-    padding: 20px;
-    border: 1px solid var(--glass-border);
-    box-shadow: var(--panel-shadow);
-    transition: var(--transition);
-}
-
-.card:hover {
-    background: var(--panel-hover);
-    border-color: var(--accent);
-    box-shadow: var(--glow);
-}
-
-/* ============================================================
-   LABELS & TYPOGRAPHY
-   ============================================================ */
-
+/* ------------ LABELS ------------ */
 label {
     display: block;
-    font-size: 14px;
-    margin-bottom: 8px;
-    font-weight: 600;
-    letter-spacing: 0.4px;
-    color: var(--text);
-    text-shadow: 0 0 4px rgba(255,255,255,0.15);
+    font-size: 13px;
+    margin: 12px 0 4px;
+    opacity: 0.9;
 }
 
-/* ============================================================
-   COLOR PICKER INPUT — CUSTOM NEON BORDER
-   ============================================================ */
-
+/* ------------ INPUTS ------------ */
 input[type="color"] {
-    appearance: none;
     width: 100%;
-    height: 48px;
-    border-radius: var(--radius);
-    border: 2px solid rgba(255,255,255,0.15);
-    background: transparent;
+    height: 36px;
+    border-radius: 6px;
+    border: 1px solid #333;
+    background: #1e1e1e;
     cursor: pointer;
-    padding: 0;
-    margin-bottom: 16px;
-    transition: var(--transition);
 }
-
-input[type="color"]::-webkit-color-swatch-wrapper {
-    padding: 0;
-    border-radius: var(--radius);
-}
-
-input[type="color"]::-webkit-color-swatch {
-    border-radius: var(--radius);
-    border: none;
-}
-
-input[type="color"]:hover {
-    border-color: var(--accent);
-    box-shadow: var(--glow);
-}
-
-/* ============================================================
-   RANGE SLIDER — ADVANCED CYBER STYLE
-   ============================================================ */
 
 input[type="range"] {
     width: 100%;
     margin-top: 6px;
-    margin-bottom: 12px;
-    -webkit-appearance: none;
-    background: transparent;
 }
 
-input[type="range"]::-webkit-slider-runnable-track {
+/* Strength label */
+#strengthLabel {
+    float: right;
+    font-size: 12px;
+    opacity: 0.8;
+}
+
+/* ------------ SELECT DROPDOWN ------------ */
+select {
     width: 100%;
-    height: 10px;
-    background: rgba(255,255,255,0.12);
-    border-radius: 10px;
-    border: 1px solid rgba(255,255,255,0.1);
-    transition: var(--transition);
-}
-
-input[type="range"]:hover::-webkit-slider-runnable-track {
-    background: rgba(50,150,255,0.25);
-    box-shadow: 0 0 8px rgba(50,150,255,0.4);
-}
-
-input[type="range"]::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    width: 22px;
-    height: 22px;
-    margin-top: -6px;
-    border-radius: 50%;
-    background: var(--accent);
+    padding: 8px;
+    border-radius: 6px;
+    background: #1e1e1e;
+    color: #e5e5e5;
+    border: 1px solid #333;
+    margin-top: 6px;
     cursor: pointer;
-    box-shadow: 0 0 10px rgba(46,169,255,0.6);
-    transition: var(--transition);
 }
 
-input[type="range"]::-webkit-slider-thumb:hover {
-    background: var(--accent-bright);
-    box-shadow: var(--glow);
-}
-
-.strength-value {
-    text-align: right;
-    font-size: 13px;
-    margin-bottom: 10px;
-    color: var(--text-soft);
-}
-
-/* ============================================================
-   DIVIDERS — HOLOGRAPHIC SEPARATORS
-   ============================================================ */
-
-.divider {
-    height: 1px;
-    width: 100%;
-    margin: 18px 0;
-    background: linear-gradient(
-        90deg,
-        transparent,
-        #4ecbff,
-        #8e7aff,
-        #4ecbff,
-        transparent
-    );
-    filter: drop-shadow(0 0 6px rgba(78,203,255,0.6));
-}
-
-/* ============================================================
-   BUTTON — GLASS NEON
-   ============================================================ */
-
+/* ------------ BUTTONS ------------ */
 button {
     width: 100%;
-    padding: 14px;
-    font-size: 15px;
-    font-weight: 800;
-    letter-spacing: 0.6px;
-    border-radius: var(--radius);
-    border: 1px solid var(--accent);
+    padding: 10px;
+    margin-top: 12px;
+    border-radius: 6px;
+    border: none;
+    background: #2979ff;
     color: white;
+    font-size: 14px;
     cursor: pointer;
-    background: linear-gradient(135deg, #008aff, #00bbff);
-    box-shadow: 0 0 14px rgba(0,153,255,0.35);
-    transition: var(--transition);
+    transition: background 0.2s ease;
 }
 
 button:hover {
-    transform: translateY(-2px);
-    background: linear-gradient(135deg, #40bfff, #6cd9ff);
-    box-shadow: var(--glow);
+    background: #1e63d6;
 }
 
-button:active {
-    transform: translateY(1px);
-    background: linear-gradient(135deg, #006dd1, #0093df);
-    box-shadow: 0 0 12px rgba(0,153,255,0.45);
+#resetBtn {
+    background: #444;
 }
 
-/* Button pulse animation */
-.glow-anim {
-    animation: pulseGlow 2.4s infinite ease-in-out;
+#resetBtn:hover {
+    background: #555;
 }
 
-@keyframes pulseGlow {
-    0% { box-shadow: 0 0 0px rgba(46,169,255,0); }
-    50% { box-shadow: 0 0 14px rgba(46,169,255,0.65); }
-    100% { box-shadow: 0 0 0px rgba(46,169,255,0); }
+/* ------------ TOGGLE ------------ */
+input[type="checkbox"] {
+    transform: scale(1.2);
+    cursor: pointer;
+    margin-right: 6px;
 }
 
-/* ============================================================
-   FOOTER
-   ============================================================ */
-
-footer {
-    margin-top: 18px;
-    text-align: center;
-    opacity: 0.8;
-    font-size: 12px;
-    color: var(--text-soft);
-    letter-spacing: 0.5px;
-}
-
-/* ============================================================
-   SCROLLBARS
-   ============================================================ */
-
-::-webkit-scrollbar {
-    width: 8px;
-}
-
-::-webkit-scrollbar-track {
-    background: rgba(255,255,255,0.06);
-    border-radius: var(--radius);
-}
-
-::-webkit-scrollbar-thumb {
-    background: rgba(46,169,255,0.45);
-    border-radius: var(--radius);
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: rgba(46,169,255,0.75);
+.toggle-row {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    opacity: 0.9;
 }

@@ -32,9 +32,12 @@
         <label for="presetSelect">Presets</label>
         <select id="presetSelect" name="presetSelect">        
             <option value="adaptive">Adaptive (Custom)</option>
-            <option value="protanopia">Protanopia</option>
-            <option value="deuteranopia">Deuteranopia</option>
-            <option value="tritanopia">Tritanopia</option>
+
+            <!-- SIMPLE LANGUAGE PRESET OPTIONS -->
+            <option value="protanopia">Protanopia – Red looks wrong</option>
+            <option value="deuteranopia">Deuteranopia – Green looks wrong</option>
+            <option value="tritanopia">Tritanopia – Blue looks wrong</option>
+
             <option value="none">None</option>
         </select>
 
@@ -46,13 +49,6 @@
             <button id="resetBtn" class="reset">Reset</button>
         </div>
 
-        <!-- Reload Toggle -->
-        <div class="reload-toggle">
-            <label>
-                <input type="checkbox" id="reloadToggle">
-                Reload page after applying
-            </label>
-        </div>
 
     </div>
 
