@@ -1,19 +1,56 @@
 console.log("%c[Popup] Loaded", "color:#66d9ff;font-weight:700;");
 
+// DOM elements
 const colorA = document.getElementById("colorA");
 const colorB = document.getElementById("colorB");
+const colorASelect = document.getElementById("colorASelect");
+const colorBSelect = document.getElementById("colorBSelect");
 const strength = document.getElementById("strength");
 const strengthLabel = document.getElementById("strengthLabel");
 const preset = document.getElementById("presetSelect");
 const applyBtn = document.getElementById("applyBtn");
 const resetBtn = document.getElementById("resetBtn");
 
-// Update label
+
+// ===============================
+//  DROPDOWN → COLOR PICKER
+// ===============================
+colorASelect.addEventListener("change", () => {
+    if (colorASelect.value) {
+        colorA.value = colorASelect.value;
+    }
+});
+
+colorBSelect.addEventListener("change", () => {
+    if (colorBSelect.value) {
+        colorB.value = colorBSelect.value;
+    }
+});
+
+
+// ===============================
+//  COLOR PICKER → DROPDOWN (sync)
+// ===============================
+colorA.addEventListener("input", () => {
+    colorASelect.value = colorA.value;
+});
+
+colorB.addEventListener("input", () => {
+    colorBSelect.value = colorB.value;
+});
+
+
+// ===============================
+//  STRENGTH BAR LABEL UPDATE
+// ===============================
 strength.addEventListener("input", () => {
     strengthLabel.textContent = strength.value + "%";
 });
 
-// Messaging helper
+
+// ===============================
+//  SEND MESSAGE TO ACTIVE TAB
+// ===============================
 function sendToActiveTab(message) {
     chrome.tabs.query({ active: true, currentWindow: true }, tabs => {
         if (!tabs.length) return;
@@ -21,7 +58,10 @@ function sendToActiveTab(message) {
     });
 }
 
-// Apply
+
+// ===============================
+//  APPLY BUTTON
+// ===============================
 applyBtn.onclick = () => {
     if (preset.value === "adaptive") {
         sendToActiveTab({
@@ -39,7 +79,10 @@ applyBtn.onclick = () => {
     }
 };
 
-// Reset
+
+// ===============================
+//  RESET BUTTON
+// ===============================
 resetBtn.onclick = () => {
     sendToActiveTab({ type: "resetAll" });
 };

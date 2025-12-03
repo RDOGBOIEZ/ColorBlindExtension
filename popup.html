@@ -12,12 +12,45 @@
 
     <div class="card">
 
-        <!-- USER INPUT COLORS -->
+        <!-- COLOR A -->
         <label for="colorA">Color A (you confuse)</label>
         <input type="color" id="colorA" class="color-box" value="#ff0000"/>
 
+        <select id="colorASelect" class="color-select">
+            <option value="">Select a color…</option>
+            <option value="#ff0000">Red</option>
+            <option value="#ffa500">Orange</option>
+            <option value="#ffff00">Yellow</option>
+            <option value="#00ff00">Green</option>
+            <option value="#0000ff">Blue</option>
+            <option value="#4b0082">Indigo</option>
+            <option value="#ee82ee">Violet</option>
+            <option value="#00ffff">Cyan</option>
+            <option value="#ff00ff">Magenta</option>
+            <option value="#000000">Black</option>
+            <option value="#ffffff">White</option>
+        </select>
+
+        <div class="divider"></div>
+
+        <!-- COLOR B -->
         <label for="colorB">Color B (you confuse it with)</label>
         <input type="color" id="colorB" class="color-box" value="#00ff00"/>
+
+        <select id="colorBSelect" class="color-select">
+            <option value="">Select a color…</option>
+            <option value="#ff0000">Red</option>
+            <option value="#ffa500">Orange</option>
+            <option value="#ffff00">Yellow</option>
+            <option value="#00ff00">Green</option>
+            <option value="#0000ff">Blue</option>
+            <option value="#4b0082">Indigo</option>
+            <option value="#ee82ee">Violet</option>
+            <option value="#00ffff">Cyan</option>
+            <option value="#ff00ff">Magenta</option>
+            <option value="#000000">Black</option>
+            <option value="#ffffff">White</option>
+        </select>
 
         <div class="divider"></div>
 
@@ -32,12 +65,9 @@
         <label for="presetSelect">Presets</label>
         <select id="presetSelect" name="presetSelect">        
             <option value="adaptive">Adaptive (Custom)</option>
-
-            <!-- SIMPLE LANGUAGE PRESET OPTIONS -->
             <option value="protanopia">Protanopia – Red looks wrong</option>
             <option value="deuteranopia">Deuteranopia – Green looks wrong</option>
             <option value="tritanopia">Tritanopia – Blue looks wrong</option>
-
             <option value="none">None</option>
         </select>
 
@@ -48,7 +78,6 @@
             <button id="applyBtn" class="glow-anim">Apply</button>
             <button id="resetBtn" class="reset">Reset</button>
         </div>
-
 
     </div>
 
